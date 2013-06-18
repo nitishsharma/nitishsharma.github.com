@@ -4,7 +4,7 @@
   <title><![CDATA[Being Fuzzy]]></title>
   <link href="http://nitishsharma.github.io/atom.xml" rel="self"/>
   <link href="http://nitishsharma.github.io/"/>
-  <updated>2013-06-19T03:05:58+12:00</updated>
+  <updated>2013-06-19T03:16:07+12:00</updated>
   <id>http://nitishsharma.github.io/</id>
   <author>
     <name><![CDATA[Nitish Sharma]]></name>
@@ -49,7 +49,7 @@ Motivation:In an array,if you are continuously asked to output f(array[i,j]) whe
 <p>
 
 You may not like that but it is not the best technique for finding the value for any f.for example,if f is sum[i,j] then it has an O(1) technique for finding sum after a preprocess of O(N)  
-.But still it is a lot better than using naive techniques such as finding f[array[i,j]] evertime you are asked. 
+.But still it is a lot better than using naive techniques such as finding f(array[i,j]) evertime you are asked. 
 </p>
 
 
