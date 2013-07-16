@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Being Fuzzy]]></title>
-  <link href="http://nitishsharma.github.io/atom.xml" rel="self"/>
-  <link href="http://nitishsharma.github.io/"/>
-  <updated>2013-06-20T23:16:51+12:00</updated>
-  <id>http://nitishsharma.github.io/</id>
+  <link href="http://nitishsharma.in/atom.xml" rel="self"/>
+  <link href="http://nitishsharma.in/"/>
+  <updated>2013-07-16T20:32:15+05:30</updated>
+  <id>http://nitishsharma.in/</id>
   <author>
     <name><![CDATA[Nitish Sharma]]></name>
     <email><![CDATA[sharma.nitish2010@gmail.com]]></email>
@@ -14,37 +14,36 @@
 
   
   <entry>
+    <title type="html"><![CDATA[linear programming]]></title>
+    <link href="http://nitishsharma.in/blog/2013/06/23/linear-programming/"/>
+    <updated>2013-06-23T21:31:00+05:30</updated>
+    <id>http://nitishsharma.in/blog/2013/06/23/linear-programming</id>
+    <content type="html"><![CDATA[<p>Recently,i went through some stuff related to linear programming and found it worth sharing 
+So i should start with the intro.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[About Segment Trees]]></title>
-    <link href="http://nitishsharma.github.io/blog/2013/06/19/about-segment-trees/"/>
-    <updated>2013-06-19T01:25:00+12:00</updated>
-    <id>http://nitishsharma.github.io/blog/2013/06/19/about-segment-trees</id>
+    <link href="http://nitishsharma.in/blog/2013/06/19/about-segment-trees/"/>
+    <updated>2013-06-19T01:25:00+05:30</updated>
+    <id>http://nitishsharma.in/blog/2013/06/19/about-segment-trees</id>
     <content type="html"><![CDATA[<p>
 This is my first Blog on a Programming topic and well as you can see,i am starting with a challenging task to explain segment trees
-</n>
+
 </p>
-
-
 <p>
 So i will start with a problem that i came across in a recent competition and this would obviously lead you to the idea of using segment trees <a href="http://www.codechef.com/MAY13/problems/MSTICK">Here</a>
 
 </p>
 
-
-<p></n></p>
-
 <p>
 Not sure if you actually read the problem or not but here it goes:
 </p>
 
-
-<p></n></p>
-
 <p>
 Motivation:In an array,if you are continuously asked to output f(array[i,j]) where f can be any function (eg:here,f is both maximum and minimum) then this stuff is very useful indeed
 </p>
-
-
-<p></n></p>
 
 <p>
 
@@ -52,141 +51,121 @@ You may not like that but it is not the best technique for finding the value for
 .But still it is a lot better than using naive techniques such as finding f(array[i,j]) evertime you are asked. 
 </p>
 
-
-<p></n></p>
-
 <p>
 
 Well the rest part is hopefully easy and just requires constructing the tree and using the query function.If you are lazy like me then you can just copy the code from here 
 </p>
 
-
-<p></n></p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Time Complexities:
-</span><span class='line'>Construct:O(N)
-</span><span class='line'>Query:O(logn)</span></code></pre></td></tr></table></div></figure>
-
-
-<p></n></p>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">Time Complexities:
+</span><span class="line">Construct:O(N)
+</span><span class="line">Query:O(logn)</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>for constructing a tree</p>
 
-
-
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">intnode</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">M</span><span class="p">[</span><span class="n">MAXIND</span><span class="p">],</span> <span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span> <span class="kt">int</span> <span class="n">N</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="n">e</span><span class="p">)</span>
-</span><span class='line'>          <span class="n">M</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
-</span><span class='line'>      <span class="k">else</span>
-</span><span class='line'>       <span class="p">{</span>
-</span><span class='line'>  <span class="c1">//compute the values in the left and right subtrees</span>
-</span><span class='line'>          <span class="n">initialize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">);</span>
-</span><span class='line'>          <span class="n">initialize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">);</span>
-</span><span class='line'>  <span class="c1">//search for the minimum value in the first and </span>
-</span><span class='line'>  <span class="c1">//second half of the interval</span>
-</span><span class='line'>          <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">M</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">]]</span> <span class="o">&lt;=</span> <span class="n">A</span><span class="p">[</span><span class="n">M</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]])</span>
-</span><span class='line'>              <span class="n">M</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">];</span>
-</span><span class='line'>          <span class="k">else</span>
-</span><span class='line'>              <span class="n">M</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">intnode</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">M</span><span class="p">[</span><span class="n">MAXIND</span><span class="p">],</span> <span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span> <span class="kt">int</span> <span class="n">N</span><span class="p">)</span>
+</span><span class="line">  <span class="p">{</span>
+</span><span class="line">      <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="n">e</span><span class="p">)</span>
+</span><span class="line">          <span class="n">M</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+</span><span class="line">      <span class="k">else</span>
+</span><span class="line">       <span class="p">{</span>
+</span><span class="line">  <span class="c1">//compute the values in the left and right subtrees</span>
+</span><span class="line">          <span class="n">initialize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">);</span>
+</span><span class="line">          <span class="n">initialize</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">N</span><span class="p">);</span>
+</span><span class="line">  <span class="c1">//search for the minimum value in the first and </span>
+</span><span class="line">  <span class="c1">//second half of the interval</span>
+</span><span class="line">          <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">M</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">]]</span> <span class="o">&lt;=</span> <span class="n">A</span><span class="p">[</span><span class="n">M</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]])</span>
+</span><span class="line">              <span class="n">M</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">];</span>
+</span><span class="line">          <span class="k">else</span>
+</span><span class="line">              <span class="n">M</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">M</span><span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span><span class="line">      <span class="p">}</span>
+</span><span class="line">  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 <p>for query</p>
 
-
-
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">M</span><span class="p">[</span><span class="n">MAXIND</span><span class="p">],</span> <span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">{</span>
-</span><span class='line'>      <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">//if the current interval doesn&#39;t intersect </span>
-</span><span class='line'>  <span class="c1">//the query interval return -1</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">e</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
-</span><span class='line'>          <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">//if the current interval is included in </span>
-</span><span class='line'>  <span class="c1">//the query interval return M[node]</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;=</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="n">e</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">)</span>
-</span><span class='line'>          <span class="k">return</span> <span class="n">M</span><span class="p">[</span><span class="n">node</span><span class="p">];</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">//compute the minimum position in the </span>
-</span><span class='line'>  <span class="c1">//left and right part of the interval</span>
-</span><span class='line'>      <span class="n">p1</span> <span class="o">=</span> <span class="n">query</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
-</span><span class='line'>      <span class="n">p2</span> <span class="o">=</span> <span class="n">query</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">//return the position where the overall </span>
-</span><span class='line'>  <span class="c1">//minimum is</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>          <span class="k">return</span> <span class="n">p2</span><span class="p">;</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">p2</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span><span class='line'>          <span class="k">return</span> <span class="n">p1</span><span class="p">;</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">p1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">A</span><span class="p">[</span><span class="n">p2</span><span class="p">])</span>
-</span><span class='line'>          <span class="k">return</span> <span class="n">p1</span><span class="p">;</span>
-</span><span class='line'>      <span class="k">return</span> <span class="n">p2</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
+<div class="bogus-wrapper"><notextile><figure class="code"> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+</pre></td><td class="code"><pre><code class="c"><span class="line"><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">e</span><span class="p">,</span> <span class="kt">int</span> <span class="n">M</span><span class="p">[</span><span class="n">MAXIND</span><span class="p">],</span> <span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span>
+</span><span class="line">  <span class="p">{</span>
+</span><span class="line">      <span class="kt">int</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">
+</span><span class="line">  <span class="c1">//if the current interval doesn&#39;t intersect </span>
+</span><span class="line">  <span class="c1">//the query interval return -1</span>
+</span><span class="line">      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="n">e</span> <span class="o">||</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">)</span>
+</span><span class="line">          <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">  <span class="c1">//if the current interval is included in </span>
+</span><span class="line">  <span class="c1">//the query interval return M[node]</span>
+</span><span class="line">      <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">&gt;=</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="n">e</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">)</span>
+</span><span class="line">          <span class="k">return</span> <span class="n">M</span><span class="p">[</span><span class="n">node</span><span class="p">];</span>
+</span><span class="line">
+</span><span class="line">  <span class="c1">//compute the minimum position in the </span>
+</span><span class="line">  <span class="c1">//left and right part of the interval</span>
+</span><span class="line">      <span class="n">p1</span> <span class="o">=</span> <span class="n">query</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+</span><span class="line">      <span class="n">p2</span> <span class="o">=</span> <span class="n">query</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span> <span class="o">+</span> <span class="n">e</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+</span><span class="line">
+</span><span class="line">  <span class="c1">//return the position where the overall </span>
+</span><span class="line">  <span class="c1">//minimum is</span>
+</span><span class="line">      <span class="k">if</span> <span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span class="line">          <span class="k">return</span> <span class="n">p2</span><span class="p">;</span>
+</span><span class="line">      <span class="k">if</span> <span class="p">(</span><span class="n">p2</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span><span class="line">          <span class="k">return</span> <span class="n">p1</span><span class="p">;</span>
+</span><span class="line">      <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">p1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">A</span><span class="p">[</span><span class="n">p2</span><span class="p">])</span>
+</span><span class="line">          <span class="k">return</span> <span class="n">p1</span><span class="p">;</span>
+</span><span class="line">      <span class="k">return</span> <span class="n">p2</span><span class="p">;</span>
+</span><span class="line">
+</span><span class="line">  <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 ]]></content>
   </entry>

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://nitishsharma.github.io/sitemap.xml 
+Sitemap: http://nitishsharma.in/sitemap.xml 
